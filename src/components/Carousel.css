@@ -1,0 +1,88 @@
+/* Carousel Container */
+.carousel {
+  position: relative;
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+}
+
+/* Each Slide */
+.slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Active Slide */
+.slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Image Styling */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrows */
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.3rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  color: var(--main-color);
+  background: #fcfcfc;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel {
+    height: 25vh;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 30vh;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
